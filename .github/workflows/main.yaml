@@ -6,6 +6,7 @@ env:
   EKS_CLUSTER: vprofile-eks
   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
   JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
+  
 
 jobs:
   Testing:
@@ -34,7 +35,7 @@ jobs:
 
       # Run sonar-scanner
       - name: SonarQube Scan
-        run: sonar-scanner -X
+        run: sonar-scanner 
            -Dsonar.host.url=${{ secrets.SONAR_URL }}
            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
